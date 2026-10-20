@@ -92,5 +92,5 @@ if __name__=='__main__':
  (ROOT/'public/templates/questions.json').write_text(json.dumps([sample],ensure_ascii=False,indent=2)+'\n')
  cols=['id','subject','topic','question','choice1','choice2','choice3','choice4','answer','explanation','difficulty','year','session','type','sourceUrl','verificationStatus','reviewNote','version','rights']
  with (ROOT/'public/templates/questions.csv').open('w',newline='') as f:
-  writer=csv.DictWriter(f,fieldnames=cols);writer.writeheader();row={k:v for k,v in sample.items() if k!='choices'};row.update({f'choice{i+1}':c for i,c in enumerate(sample['choices'])});writer.writerow(row)
+  writer=csv.DictWriter(f,fieldnames=cols,lineterminator="\n");writer.writeheader();row={k:v for k,v in sample.items() if k!='choices'};row.update({f'choice{i+1}':c for i,c in enumerate(sample['choices'])});writer.writerow(row)
  print(f'{len(bank)} authored exercises; {len(F)} independent families; {len(bank)//len(F)} conditions/family')
