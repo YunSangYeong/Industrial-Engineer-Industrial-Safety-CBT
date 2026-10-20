@@ -116,7 +116,11 @@
     "trigger": "workflow_dispatch or explicit [deploy-pages] main push",
     "automaticDeploymentOnPush": false,
     "agentMayExecuteDeployment": true,
-    "status": "not-deployed",
-    "authorizationNote": "User explicitly requested implementation, testing, and GitHub Pages deployment on 2026-10-20; overrides default user-only deployment for this task. API access remains blocked."
+    "status": "attempted-failed-pages-site-404",
+    "authorizationNote": "User explicitly requested implementation, testing, and GitHub Pages deployment on 2026-10-20; overrides default user-only deployment for this task. API access remains blocked.",
+    "appCommit": "1c89bd6a2c38e74aa52bd50372c18e946128a1fc",
+    "runUrl": "https://github.com/YunSangYeong/Industrial-Engineer-Industrial-Safety-CBT/actions/runs/39402005917",
+    "validation": "passed",
+    "publicSiteValidation": "not-run"
   }
 }

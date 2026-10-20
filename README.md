@@ -56,7 +56,7 @@ npm run test:e2e
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e
 ```
 
-현재 검증 결과와 차단된 항목은 [검증 기록](docs/validation.md)에 있습니다. PC Chromium과 Pixel 7 에뮬레이션이며 실기기 검증과 다른 브라우저 검증은 별개입니다.
+로컬 단위 1,018개와 PC/모바일 브라우저 시나리오 30개가 통과했습니다. 원격 validate도 성공했지만 Pages 배포는 사이트 조회 404로 실패했습니다. 현재 검증 결과와 차단된 항목은 [검증 기록](docs/validation.md)에 있습니다. PC Chromium과 Pixel 7 에뮬레이션이며 실기기 검증과 다른 브라우저 검증은 별개입니다.
 
 ## GitHub Pages
 
@@ -65,6 +65,8 @@ Vite base는 `/Industrial-Engineer-Industrial-Safety-CBT/`입니다. 예상 공�
 https://YunSangYeong.github.io/Industrial-Engineer-Industrial-Safety-CBT/
 
 `.github/workflows/pages.yml`은 main push/PR에서 검증하고 `workflow_dispatch` 또는 main의 커밋 메시지에 명시적으로 `[deploy-pages]`를 넣은 push에서만 배포합니다. 일반 push/PR은 검증만 수행합니다. 수동 배포도 테스트가 통과해야 합니다. 이번 작업에서 사용자는 에이전트의 배포 실행까지 명시적으로 요청했지만, Git 읽기·푸시 권한과 GitHub API/Pages 설정 권한은 별개입니다. 직접 API가 차단되어 이번 요청에서는 배포 표식이 있는 push로 GitHub Actions의 배포를 시도하며, Actions 공개 웹 화면에서 결과를 확인합니다. Pages가 아직 활성화되지 않았다면 관리자 설정이 필요합니다. 미실행을 배포 성공으로 기록하지 않습니다.
+
+**실제 배포 시도 결과:** 앱 커밋 `1c89bd6`의 [Actions 실행](https://github.com/YunSangYeong/Industrial-Engineer-Industrial-Safety-CBT/actions/runs/39402005917)에서 validate는 성공하고 deploy는 Pages 조회 404로 실패했습니다. 아래 최초 Pages 설정이 필요합니다.
 
 직접 배포하는 경우:
 
